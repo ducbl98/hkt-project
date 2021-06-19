@@ -10,8 +10,8 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts=Post::all();
-        return view('post.list',compact('posts'));
+        $posts = Post::all();
+        return view('post.list', compact('posts'));
     }
 
     public function create()
@@ -29,14 +29,14 @@ class PostController extends Controller
         $post->save();
 
         //dung session de dua ra thong bao
-        Session::flash('success', 'Tạo mới khách hàng thành công');
+        Session::flash('success', 'Tạo mới bài viết thành công');
         return redirect()->route('post.index');
     }
 
     public function edit($id)
     {
-        $post=Post::findOrFail($id);
-        return view('post.edit',compact('post'));
+        $post = Post::findOrFail($id);
+        return view('post.edit', compact('post'));
     }
 
     public function update(Request $request, $id)
@@ -48,19 +48,24 @@ class PostController extends Controller
         $post->content = $request->input('content');
         $post->save();
 
-        Session::flash('success', 'Cập nhật khách hàng thành công');
+        Session::flash('success', 'Cập nhật bài viết thành công');
 
         return redirect()->route('post.index');
     }
 
     public function show($id)
     {
-        $post=Post::findOrFail($id);
-        return view('post.detail',compact('post'));
+        $post = Post::findOrFail($id);
+        return view('post.detail', compact('post'));
     }
 
     public function destroy($id)
     {
+        $post = Post::findOrFail($id);
+        $post->delete();
 
+        Session::flash('success', 'Xóa bài viết thành công');
+
+        return redirect()->route('post.index');
     }
 }
