@@ -8,7 +8,7 @@ class PostController extends Controller
 {
     public function index()
     {
-
+        return view('Post.list');
     }
 
     public function create()
