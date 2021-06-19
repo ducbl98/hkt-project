@@ -36,12 +36,21 @@ class PostController extends Controller
     public function edit($id)
     {
         $post=Post::findOrFail($id);
-        return view(post)
+        return view('post.edit',compact('post'));
     }
 
     public function update(Request $request, $id)
     {
+        $post = Post::findOrFail($id);
+        $post->name = $request->input('name');
+        $post->tag = $request->input('tag');
+        $post->category = $request->input('category');
+        $post->content = $request->input('content');
+        $post->save();
 
+        Session::flash('success', 'Cập nhật khách hàng thành công');
+
+        return redirect()->route('post.index');
     }
 
     public function show($id)
