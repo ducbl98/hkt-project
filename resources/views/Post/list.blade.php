@@ -5,12 +5,13 @@
         <div class="row">
             <div class="col-12"><h1>Danh Sách bài viết</h1></div>
             <div class="col-12">
-{{--                @if (Session::has('success'))--}}
-{{--                    <p class="text-success">--}}
-{{--                        <i class="fa fa-check" aria-hidden="true"></i>{{ Session::get('success') }}--}}
-{{--                    </p>--}}
-{{--                @endif--}}
+                {{--                @if (Session::has('success'))--}}
+                {{--                    <p class="text-success">--}}
+                {{--                        <i class="fa fa-check" aria-hidden="true"></i>{{ Session::get('success') }}--}}
+                {{--                    </p>--}}
+                {{--                @endif--}}
             </div>
+            <a class="btn btn-primary" href="{{ route('post.create') }}">Thêm mới</a>
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -21,26 +22,21 @@
                 </tr>
                 </thead>
                 <tbody>
-{{--                @if(count($customers) == 0)--}}
-{{--                    <tr>--}}
-{{--                        <td colspan="4">Không có dữ liệu</td>--}}
-{{--                    </tr>--}}
-{{--                @else--}}
-{{--                    @foreach($customers as $key => $customer)--}}
-{{--                        <tr>--}}
-{{--                            <th scope="row">{{ ++$key }}</th>--}}
-{{--                            <td>{{ $customer->name }}</td>--}}
-{{--                            <td>{{ $customer->dob }}</td>--}}
-{{--                            <td>{{ $customer->email }}</td>--}}
-{{--                            <td><a href="{{ route('customers.edit', $customer->id) }}">sửa</a></td>--}}
-{{--                            <td><a href="{{ route('customers.destroy', $customer->id) }}" class="text-danger"--}}
-{{--                                   onclick="return confirm('Bạn chắc chắn muốn xóa?')">xóa</a></td>--}}
-{{--                        </tr>--}}
-{{--                    @endforeach--}}
-{{--                @endif--}}
+                @forelse($posts as $key=>$post)
+                    <tr>
+                        <th scope="row">{{ $key+1 }}</th>
+                        <td>{{ $post->name}}</td>
+                        <td>{{ $post->tag }}</td>
+                        <td>{{ $post->category}}</td>
+{{--                        <td><a href="{{ route('post.edit', $post->id) }}">Sửa</a></td>--}}
+{{--                        <td><a href="{{ route('post.destroy', $post->id) }}" class="text-danger"--}}
+{{--                               onclick="return confirm('Bạn chắc chắn muốn xóa?')">Xóa</a></td>--}}
+                    </tr>
+                @empty
+                    <p>No Data</p>
+                @endforelse
                 </tbody>
             </table>
-{{--            <a class="btn btn-primary" href="{{ route('customers.create') }}">Thêm mới</a>--}}
         </div>
     </div>
 @endsection

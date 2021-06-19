@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function index()
     {
-        return view('Post.list');
+        $posts=Post::all();
+        return view('Post.list',compact('posts'));
     }
 
     public function create()
