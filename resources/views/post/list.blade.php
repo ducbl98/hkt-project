@@ -20,6 +20,8 @@
                     <th scope="col">Tag</th>
                     <th scope="col">Thể Loại</th>
                     <th></th>
+                    <th></th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -29,9 +31,10 @@
                         <td>{{ $post->name}}</td>
                         <td>{{ $post->tag }}</td>
                         <td>{{ $post->category}}</td>
+                        <td><a style="color:#af9906" href="{{route('post.detail',$post->id)}}">Xem chi tiết bài viết</a>
                         <td><a href="{{ route('post.edit', $post->id) }}">Sửa</a></td>
-{{--                        <td><a href="{{ route('post.destroy', $post->id) }}" class="text-danger"--}}
-{{--                               onclick="return confirm('Bạn chắc chắn muốn xóa?')">Xóa</a></td>--}}
+                        {{--                        <td><a href="{{ route('post.destroy', $post->id) }}" class="text-danger"--}}
+                        {{--                               onclick="return confirm('Bạn chắc chắn muốn xóa?')">Xóa</a></td>--}}
                     </tr>
                 @empty
                     <p>No Data</p>
