@@ -19,7 +19,7 @@
                                 <input type="text" class="form-control" name="name" placeholder="Enter name" value="{{$post->name}}" required>
                             </div>
                             <div class="form-group">
-                                <label></label>
+                                <label>Tag</label>
                                 <input type="text" class="form-control" name="tag" placeholder="Enter tag" value="{{$post->tag}}" required>
                             </div>
                             <div class="form-group">
