@@ -33,7 +33,7 @@
 
                             <div class="form-group">
                                 <label>Content</label>
-                                <textarea class="form-control" name="content" rows="3" placeholder="Enter Content"></textarea>
+                                <textarea class="form-control" name="content" rows="3" placeholder="Enter Content" id="post-editor"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
@@ -42,5 +42,14 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#post-editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
 @endsection
 

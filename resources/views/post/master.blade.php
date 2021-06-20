@@ -22,5 +22,7 @@
 <div class="container">
     @yield('content')
 </div>
+<script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js"></script>
+@yield('script')
 </body>
 </html>
