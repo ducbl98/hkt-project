@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -16,7 +17,8 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('post.create');
+        $categories=Category::all();
+        return view('post.create',compact('categories'));
     }
 
     public function store(Request $request): \Illuminate\Http\RedirectResponse
@@ -24,7 +26,7 @@ class PostController extends Controller
         $post = new Post();
         $post->name = $request->input('name');
         $post->tag = $request->input('tag');
-        $post->category = $request->input('category');
+        $post->category_id = $request->input('category_id');
         $post->content = $request->input('content');
         $post->save();
 
@@ -36,7 +38,8 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::findOrFail($id);
-        return view('post.edit', compact('post'));
+        $categories=Category::all();
+        return view('post.edit', compact('post','categories'));
     }
 
     public function update(Request $request, $id)
@@ -44,7 +47,7 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
         $post->name = $request->input('name');
         $post->tag = $request->input('tag');
-        $post->category = $request->input('category');
+        $post->category_id = $request->input('category_id');
         $post->content = $request->input('content');
         $post->save();
 

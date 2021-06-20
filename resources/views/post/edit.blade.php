@@ -24,7 +24,14 @@
                             </div>
                             <div class="form-group">
                                 <label>Category</label>
-                                <input type="text" class="form-control" name="category" placeholder="Enter Category" value="{{$post->category}}" required>
+                                <select name="category_id" class="form-control">
+                                    @foreach($categories as $category)
+                                        @if($category->id == $post->category_id)
+                                            <option value="$category->id" selected>{{$category->name}}</option>
+                                        @endif
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label>Content</label>

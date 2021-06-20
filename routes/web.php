@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,4 +22,11 @@ Route::prefix('post')->group(function (){
     Route::post('/{id}/update',[PostController::class,'update'])->name('post.update');
     Route::get('/{id}/show',[PostController::class,'show'])->name('post.detail');
     Route::get('/{id}/delete',[PostController::class,'destroy'])->name('post.delete');
+});
+Route::prefix('category')->group(function (){
+    Route::get('/',[CategoryController::class,'index'])->name('category.index');
+    Route::get('/create',[CategoryController::class,'create'])->name('category.create');
+    Route::post('/store',[CategoryController::class,'store'])->name('category.store');
+    Route::get('/{id}/edit',[CategoryController::class,'edit'])->name('category.edit');
+    Route::post('/{id}/update',[CategoryController::class,'update'])->name('category.update');
 });
