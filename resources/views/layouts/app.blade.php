@@ -18,6 +18,25 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link href="../Home/img/favicon.png" rel="icon">
+    <link href="../Home/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../Home/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../Home/icofont/icofont.min.css" rel="stylesheet">
+    <link href="../Home/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../Home/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="../Home/css/venobox.css" rel="stylesheet">
+    <link href="../Home/css/remixicon.css" rel="stylesheet">
+    <link href="../Home/css/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../Home/css/style.css" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">

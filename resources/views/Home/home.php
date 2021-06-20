@@ -1,27 +1,41 @@
-@extends('layouts.app')
 
-@section('content')
-{{--<div class="container">--}}
-{{--    <div class="row justify-content-center">--}}
-{{--        <div class="col-md-8">--}}
-{{--            <div class="card">--}}
-{{--                <div class="card-header">{{ __('Dashboard') }}</div>--}}
+<!DOCTYPE html>
+<html lang="en">
 
-{{--                <div class="card-body">--}}
-{{--                    @if (session('status'))--}}
-{{--                        <div class="alert alert-success" role="alert">--}}
-{{--                            {{ session('status') }}--}}
-{{--                        </div>--}}
-{{--                    @endif--}}
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-{{--                    {{ __('You are logged in!') }}--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
+    <title>Gp Bootstrap Template - Index</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="icofont/icofont.min.css" rel="stylesheet">
+    <link href="boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="css/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/venobox.css" rel="stylesheet">
+    <link href="css/remixicon.css" rel="stylesheet">
+    <link href="css/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: Gp - v2.2.1
+    * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
 
 <body>
 
@@ -172,30 +186,30 @@
                 <div class="col-lg-8 mt-5 mt-lg-0">
 
                     <form action=" method="post" role="form" class="php-email-form">
-                    <div class="form-row">
-                        <div class="col-md-6 form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                        <div class="form-row">
+                            <div class="col-md-6 form-group">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                <div class="validate"></div>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                                <div class="validate"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                             <div class="validate"></div>
                         </div>
-                        <div class="col-md-6 form-group">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                        <div class="form-group">
+                            <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
                             <div class="validate"></div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                        <div class="validate"></div>
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                        <div class="validate"></div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">Your message has been sent. Thank you!</div>
-                    </div>
-                    <div class="text-center"><button type="submit">Send Message</button></div>
+                        <div class="mb-3">
+                            <div class="loading">Loading</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                        </div>
+                        <div class="text-center"><button type="submit">Send Message</button></div>
                     </form>
 
                 </div>
@@ -206,18 +220,19 @@
     </section><!-- End Contact Section -->
 
 </main><!-- End #main -->
-<script src="Home/jquery/jquery.min.js"></script>
-<script src="Home/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="Home/jquery/jquery.easing.min.js"></script>
-<script src="Home/bootstrap/js/owl.carousel.min.js"></script>
-<script src="Home/bootstrap/js/isotope.pkgd.min.js"></script>
-<script src="Home/venobox/venobox.min.js"></script>
-<script src="Home/bootstrap/js/jquery.waypoints.min.js"></script>
-<script src="Home/bootstrap/js/counterup.min.js"></script>
-<script src="Home/bootstrap/js/aos.js"></script>
+<script src="jquery/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="jquery/jquery.easing.min.js"></script>
+<script src="bootstrap/js/owl.carousel.min.js"></script>
+<script src="bootstrap/js/isotope.pkgd.min.js"></script>
+<script src="venobox/venobox.min.js"></script>
+<script src="bootstrap/js/jquery.waypoints.min.js"></script>
+<script src="bootstrap/js/counterup.min.js"></script>
+<script src="bootstrap/js/aos.js"></script>
 
 <!-- Template Main JS File -->
-<script src="Home/bootstrap/js/main.js"></script>
+<script src="bootstrap/js/main.js"></script>
 
 </body>
-@endsection
+
+</html>
