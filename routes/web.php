@@ -30,3 +30,7 @@ Route::prefix('category')->group(function (){
     Route::get('/{id}/edit',[CategoryController::class,'edit'])->name('category.edit');
     Route::post('/{id}/update',[CategoryController::class,'update'])->name('category.update');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
